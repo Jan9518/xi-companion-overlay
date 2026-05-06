@@ -16,13 +16,10 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Install Gradle 7.5
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gradle
-          # Note: apt install might give a different version, 
-          # but we'll try to force the build with the system gradle we just installed 
-          # or adjust the build.gradle to match.
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 7.5
 
       - name: Build APK
         run: gradle assembleDebug
