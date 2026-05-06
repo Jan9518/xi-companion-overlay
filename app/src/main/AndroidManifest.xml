@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<manifestmanifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xi.companion">
+
+    <<usesuses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <<usesuses-permission android:name="android.permission.INTERNET" />
+    <<usesuses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <<applicationapplication
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Xi Companion"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        
+        <<serviceservice
+            android:name=".XiOverlayService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <<activityactivity
+            android:name=".MainActivity"
+            android:exported="true">
+            <<intentintent-filter>
+                <<actionaction android:name="android.intent.action.MAIN" />
+                <<categorycategory android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

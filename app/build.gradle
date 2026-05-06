@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.xi.companion"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles 'proguard-android-optimize.txt', 'proguard-android.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+}
